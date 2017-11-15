@@ -8,7 +8,7 @@ Class Reservation
 	
 	public function __construct($insurance = null)
 	{
-		if ($insurance != null)
+		if ($insurance != null && $insurance == true)
 		{
 			$this->cancellation_insurance = $insurance;
 		}
