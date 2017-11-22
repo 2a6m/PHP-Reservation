@@ -16,5 +16,10 @@
 			<label for="age">Age</label>
 			<input type="number" id="age" name="age">
 		</div>
+		
+		<div>
+			<button type="submit" class="btn btn-primary" name="step_2">Suivant</button>
+			<button type="submit" class="btn btn-primary" name="">Annuler</button>
+		</div>
 	
 	</form>

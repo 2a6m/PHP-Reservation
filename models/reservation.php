@@ -19,6 +19,11 @@ Class Reservation
 		$this->nbr_passenger = $nbr;
 	}
 	
+	public function get_number_passenger()
+	{
+		return $this->nbr_passenger;
+	}
+	
 	public function set_insurance($bool)
 	{
 		$this->cancellation_insurance = $bool;
@@ -26,7 +31,7 @@ Class Reservation
 	
 	public function lenght_passengers_encoded()
 	{
-		return count($this->passengers)
+		return count($this->passengers);
 	}
 }
 ?>

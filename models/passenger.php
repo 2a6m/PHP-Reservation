@@ -2,12 +2,14 @@
 
 class Passenger
 {
-	public $name;
+	public $firstname;
+	public $lastname;
 	public $age;
 	
-	public function __construct ($name, $age)
+	public function __construct ($firstname,$lastname, $age)
 	{
-		$this->name = $name;
+		$this->firstname = $firstname;
+		$this->lastname = $lastname;
 		$this->age = $age;
 	}
 }

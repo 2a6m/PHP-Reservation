@@ -1,6 +1,7 @@
 <?php
 
 include 'models/reservation.php';
+include 'models/passenger.php';
 
 class App
 {
@@ -36,7 +37,9 @@ class App
 	
 	public function step1()
 	{
+		// show variable ine POST
 		var_dump($_POST);
+		var_dump($_SESSION);
 		
 		// init reservation
 		$res = new reservation();
@@ -83,7 +86,26 @@ class App
 	
 	public function step2()
 	{
+		// show variable ine POST
+		var_dump($_POST);
+		var_dump($_SESSION);
 		
+		// extract information
+		$res = unserialize($_SESSION['res']);
+		
+		// create passenger
+		$passenger = new passenger($_POST['firstname'],$_POST['lastname'], $_POST['age']);
+		
+		$res->passengers[] = $passenger;
+		
+		// save
+		$_SESSION['res'] = serialize($res);
+		
+		// if nbr passenger encoded < nbr passenger, encode a other one
+		if ($res->get_number_passenger() > $res->lenght_passengers_encoded())
+		{
+			include 'views/form_pers.php';
+		}		
 	}
 }
 ?>
