@@ -36,7 +36,7 @@
 	
 		<div>
 			<button type="submit" class="btn btn-primary" name="step_1">Suivant</button>
-			<button type="submit" class="btn btn-primary" name="cancel">Annuler</button>
+			<button type="submit" class="btn btn-primary" name="">Annuler</button>
 		</div>
 	
 	</form>

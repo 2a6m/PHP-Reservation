@@ -3,3 +3,4 @@
     include_once 'controllers/app.php';
     $app = new App();
     $app->start();
+?>

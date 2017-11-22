@@ -1,5 +1,7 @@
 <?php
 
+include 'models/reservation.php';
+
 class App
 {
 	public function start()
@@ -11,6 +13,10 @@ class App
 		elseif (isset($_POST['step_1']))
 		{
 			$this->step1();
+		}
+		elseif (isset($_POST['step_2']))
+		{
+			$this->step2();
 		}
 		else
 		{
@@ -30,19 +36,24 @@ class App
 	
 	public function step1()
 	{
+		var_dump($_POST);
+		
 		// init reservation
 		$res = new reservation();
 		
 		// all received values are checked
-		if isset($_POST['places'])
+		if (isset($_POST['places']))
 		{
-			if (empty($_POST['places']) || isset($_POST['places']!<=0))
+			if ($_POST['places']<=0)
 			{
 				// send error (to implement)
 			}
 			else
 			{
-				$nb_pass = isset($_POST['places']);
+				if (is_numeric($_POST['places']))
+				{
+					$nb_pass = (int)$_POST['places'];
+				}		
 			}
 		}
 		else
@@ -58,11 +69,21 @@ class App
 		}
 		
 		// give the informations to the reservation
-		$res->set_nb_passenger();
-		$res->set_insurance();
+		$res->set_number_passenger($nb_pass);
+		$res->set_insurance($insurance);
+		
+		// save reservation in session_cache_expire
+		$_SESSION['res'] = serialize($res);
 		
 		// pass at the next step
+		include 'views/form_pers.php';
+		
 		return;
+	}
+	
+	public function step2()
+	{
+		
 	}
 }
 ?>

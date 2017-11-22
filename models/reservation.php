@@ -14,6 +14,19 @@ Class Reservation
 		}
 	}
 	
+	public function set_number_passenger($nbr)
+	{
+		$this->nbr_passenger = $nbr;
+	}
 	
+	public function set_insurance($bool)
+	{
+		$this->cancellation_insurance = $bool;
+	}
+	
+	public function lenght_passengers_encoded()
+	{
+		return count($this->passengers)
+	}
 }
 ?>
