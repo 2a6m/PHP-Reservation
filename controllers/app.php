@@ -32,12 +32,12 @@ class App
 	
 	public function new_res()
 	{
-		include 'views/form1.php';
+		include 'views/form-reservation.php';
 	}
 	
 	public function step1()
 	{
-		// show variable ine POST
+		// show variable in POST
 		var_dump($_POST);
 		var_dump($_SESSION);
 		
@@ -79,14 +79,14 @@ class App
 		$_SESSION['res'] = serialize($res);
 		
 		// pass at the next step
-		include 'views/form_pers.php';
+		include 'views/form-passenger.php';
 		
 		return;
 	}
 	
 	public function step2()
 	{
-		// show variable ine POST
+		// show variable in POST
 		var_dump($_POST);
 		var_dump($_SESSION);
 		
@@ -96,16 +96,22 @@ class App
 		// create passenger
 		$passenger = new passenger($_POST['firstname'],$_POST['lastname'], $_POST['age']);
 		
-		$res->passengers[] = $passenger;
+		$res->add_passenger($passenger);
 		
 		// save
-		$_SESSION['res'] = serialize($res);
+		
 		
 		// if nbr passenger encoded < nbr passenger, encode a other one
 		if ($res->get_number_passenger() > $res->lenght_passengers_encoded())
 		{
-			include 'views/form_pers.php';
-		}		
+			$_SESSION['res'] = serialize($res);
+			include 'views/form-passenger.php';
+		}
+		else
+		{
+			$_SESSION['res'] = serialize($res);
+			include 'views/recapitulatif.php';
+		}
 	}
 }
 ?>

@@ -4,7 +4,7 @@ Class Reservation
 {
 	private $nbr_passenger;
 	private $cancellation_insurance = false;
-	public $passengers = array();
+	private $passengers = array();
 	
 	public function __construct($insurance = null)
 	{
@@ -32,6 +32,16 @@ Class Reservation
 	public function lenght_passengers_encoded()
 	{
 		return count($this->passengers);
+	}
+	
+	public function add_passenger($passenger)
+	{
+		$this->passengers[] = $passenger;
+	}
+	
+	public function get_passengers()
+	{
+		return $this->passengers;
 	}
 }
 ?>
