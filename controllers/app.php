@@ -70,14 +70,14 @@ class App
 		
 		if (isset($_POST['insurance']))
 		{
-			// ?? what return isset($_POST['insurance']) ??
-			// $insurance = isset($_POST['insurance']);
 			$insurance = true;
+			$res->set_insurance($insurance);
 		}
+		
 		
 		// give the informations to the reservation
 		$res->set_number_passenger($nb_pass);
-		$res->set_insurance($insurance);
+		
 		
 		// save reservation in session_cache_expire
 		$_SESSION['res'] = serialize($res);
