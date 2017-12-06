@@ -52,3 +52,9 @@
 	echo"<br>$price</br>"
 	?>
 </div>
+
+<div>
+	<form method="post" action="index.php">
+		<button type="submit" class="btn btn-primary" name="">Annuler</button>
+	</form>
+</div>
