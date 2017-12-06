@@ -5,6 +5,7 @@ Class Reservation
 	private $nbr_passenger;
 	private $cancellation_insurance = false;
 	private $passengers = array();
+	private $price;
 	
 	public function __construct($insurance = null)
 	{
@@ -29,6 +30,11 @@ Class Reservation
 		$this->cancellation_insurance = $bool;
 	}
 	
+	public function get_insurance()
+	{
+		return $this->cancellation_insurance;
+	}
+	
 	public function lenght_passengers_encoded()
 	{
 		return count($this->passengers);
@@ -42,6 +48,33 @@ Class Reservation
 	public function get_passengers()
 	{
 		return $this->passengers;
+	}
+	
+	public function calculate_price()
+	{
+		$p = 0;
+		if ($this->cancellation_insurance == true)
+		{
+			$p += 20;
+		}
+		foreach ($this->passengers as &$pas)
+		{
+			if ($pas->get_age() > 12)
+			{
+				$p += 15;
+			}
+			else
+			{
+				$p += 10;
+			}
+		}
+		return $p;
+	}
+	
+	public function get_price()
+	{
+		$this->price = $this->calculate_price();
+		return $this->price;
 	}
 }
 ?>

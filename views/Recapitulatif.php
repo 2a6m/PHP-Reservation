@@ -28,6 +28,7 @@
 		<button type="submit" class="btn btn-primary" name="step_3">Suivant</button>
 		<button type="submit" class="btn btn-primary" name="">Annuler</button>
 		<!--
+		To modify passengers
 		<button type="submit" class="btn btn-primary" name="step_1">Retour</button>
 		!-->
 	</div>

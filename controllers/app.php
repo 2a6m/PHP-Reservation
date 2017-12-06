@@ -19,6 +19,10 @@ class App
 		{
 			$this->step2();
 		}
+		elseif (isset($_POST['step_3']))
+		{
+			$this->step3();
+		}
 		else
 		{
 			$this->home();
@@ -112,6 +116,18 @@ class App
 			$_SESSION['res'] = serialize($res);
 			include 'views/recapitulatif.php';
 		}
+	}
+	
+	public function step3()
+	{
+		// show variable in POST
+		var_dump($_POST);
+		var_dump($_SESSION);
+		
+		// extract information
+		$res = unserialize($_SESSION['res']);
+		
+		include 'views/confirmation.php';
 	}
 }
 ?>
