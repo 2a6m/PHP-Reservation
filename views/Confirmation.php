@@ -27,6 +27,8 @@
 		?></tr>
 	</table>
 	
+	<br></br>
+	
 	<label>Passengers:</label>
 	<table>
 	<tr>
@@ -46,12 +48,16 @@
 	}
 	?></table>
 	
+	<br></br>
+	
 	<label>Price:</label>
 	<?php
 	$price = $res->get_price();
 	echo"<br>$price</br>"
 	?>
 </div>
+
+<br></br>
 
 <div>
 	<form method="post" action="index.php">

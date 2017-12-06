@@ -22,6 +22,8 @@
 	?></table>
 </div>
 
+<br></br>
+
 <!-- Buttons !-->
 <form method="post" action="index.php">
 	<div>
