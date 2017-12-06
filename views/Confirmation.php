@@ -32,19 +32,22 @@
 	<label>Passengers:</label>
 	<table>
 	<tr>
-		<th>Name</th>
+		<th>Lastname</th>
+		<th>Firstname</th>
 		<th>Age</th>
 	</tr>
 	<?php
 	$p = $res->get_passengers();
 	for($i=0;$i<count($p);$i++)
 	{
-		$n = (string) $p[$i]->get_name();
+		$ln = (string) $p[$i]->get_lastname();
+		$fn = (string) $p[$i]->get_firstname();
 		$a = (string) $p[$i]->get_age();
 		echo "<tr>
-		<td>$n</td>
-		<td>$a</td>
-		</tr>";
+				<td>$ln</td>
+				<td>$fn</td>
+				<td>$a</td>
+			  </tr>";
 	}
 	?></table>
 	

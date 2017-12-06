@@ -23,6 +23,11 @@ class App
 		{
 			$this->step3();
 		}
+		elseif (isset($_POST['modify_passenger']))
+		{
+			$res = unserialize($_SESSION['res']);
+			include 'views/form-passenger.php';
+		}
 		else
 		{
 			$this->home();
@@ -106,13 +111,14 @@ class App
 		
 		
 		// if nbr passenger encoded < nbr passenger, encode a other one
-		if ($res->get_number_passenger() > $res->lenght_passengers_encoded())
+		if ($res->get_number_passenger() > $res->lenght_passengers_update())
 		{
 			$_SESSION['res'] = serialize($res);
 			include 'views/form-passenger.php';
 		}
 		else
 		{
+			$res->save_passengers();
 			$_SESSION['res'] = serialize($res);
 			include 'views/recapitulatif.php';
 		}
