@@ -65,5 +65,6 @@
 <div>
 	<form method="post" action="index.php">
 		<button type="submit" class="btn btn-primary" name="">Annuler</button>
+		<button type="submit" class="btn btn-primary" name="savedb">Confirmer</button>
 	</form>
 </div>

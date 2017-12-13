@@ -28,6 +28,10 @@ class App
 			$res = unserialize($_SESSION['res']);
 			include 'views/form-passenger.php';
 		}
+		elseif (isset($_POST['savedb']))
+		{
+			include 'ctr_savedb.php';
+		}
 		else
 		{
 			$this->home();
