@@ -10,7 +10,7 @@
 			<th>Insurance</th>
 		</tr>
 		<tr><?php
-		//$dest = $res->get_destination();
+		$dest = $res->get_destination();
 		$nbr = $res->get_number_passenger();
 		if ($res->get_insurance())
 		{
@@ -21,7 +21,7 @@
 			$ins = 'No';
 		}
 		
-		echo"<td>Ibiza</td>
+		echo"<td>$dest</td>
 			 <td>$nbr</td>
 			 <td>$ins</td>"
 		?></tr>

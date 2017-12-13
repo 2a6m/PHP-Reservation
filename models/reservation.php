@@ -2,6 +2,7 @@
 
 Class Reservation
 {
+	private $destination;
 	private $nbr_passenger;
 	private $cancellation_insurance = false;
 	private $passengers = array();
@@ -14,6 +15,16 @@ Class Reservation
 		{
 			$this->cancellation_insurance = $insurance;
 		}
+	}
+	
+	public function set_destination($dest)
+	{
+		$this->destination = $dest;
+	}
+	
+	public function get_destination()
+	{
+		return $this->destination;
 	}
 	
 	public function set_number_passenger($nbr)

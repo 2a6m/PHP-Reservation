@@ -73,6 +73,12 @@ class App
 			// send error (miss nb_passenger)
 		}
 		
+		if (isset($_POST['destination']))
+		{
+			$dest = $_POST['destination'];
+			$res->set_destination($dest);
+		}
+		
 		if (isset($_POST['insurance']))
 		{
 			$insurance = true;
