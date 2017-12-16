@@ -26,24 +26,28 @@
 	
 	<!-- form to reservate -->
 	<form method="post" action="index.php">
-	
-		<div class="form">
-			<label for="destination">Destination</label>
-			<select name="destination">
-				<option value="Barcelona">Barcelona</option>
-				<option value="New-York">New-York</option>
-				<option value="Pragues">Pragues</option>
-				<option value="London">London</option>
-			</select>
-		</div>
 		
 		<div class="form">
-			<label for="places">Nombre de places</label>
-			<input type="number" id="places" name="places">
-		</div>
-		
-		<div class="form-check">
-			<label><input type="checkbox" id="insurancce" name="insurance">Assurance annulation</label>
+		<table>
+			<tr>
+				<tr>
+					<td><label for="destination">Destination</label></td>
+					<td><select name="destination">
+						<option value="Barcelona">Barcelona</option>
+						<option value="New-York">New-York</option>
+						<option value="Pragues">Pragues</option>
+						<option value="London">London</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label for="places">Nombre de places</label></td>
+					<td><input type="number" id="places" name="places"></td>
+				</tr>
+				<tr>
+					<td><label>Assurance annulation</label></td>
+					<td><input type="checkbox" id="insurancce" name="insurance"></td>
+				</tr>
+		</table>
 		</div>
 	
 		<br></br>

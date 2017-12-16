@@ -1,5 +1,6 @@
 <?php
 
+// Connection to DB
 	// information to connect to the db
 	$servername = "localhost";
     $username = "root";
@@ -13,10 +14,10 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-    echo "Connected successfully /";
-	
-	// execute request SQL
-		// add data to db reservation
+//
+
+// execute request SQL
+	// add data to db reservation
 	$res = unserialize($_SESSION['res']);
 	
 	$destination = $res->get_destination();
@@ -36,14 +37,13 @@
 	if ($conn->query($sql) == TRUE)
 	{
 		$res_id = $conn->insert_id;
-		echo "reservation created successfully /";
 	}
 	else
 	{
 		echo "Error: ".$sql."<br>".$conn->error;
 	}
 	
-		// add data to db passenger
+	// add data to db passenger
 	foreach($res->get_passengers() as $pas)
 	{
 		$firstname = $pas->get_firstname();
@@ -55,15 +55,13 @@
 		
 		if ($conn->query($sql) == TRUE)
 		{
-			echo "passenger created successfully  /";
 		}
 		else
 		{
 			echo "Error: ".$sql."<br>".$conn->error;
 		}
 	}
-	
-	// show result
+//
 	
 	//end
 	$conn->close();

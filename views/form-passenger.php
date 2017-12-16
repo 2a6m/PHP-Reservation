@@ -16,26 +16,29 @@
 		?>
 	
 		<div class="form">
-			<label for="lastname">Nom</label>
-			<input type="string" id="lastname" name="lastname" 
-			<?php
-			if($bool){echo"value=$ln";}
-			?>>
-		</div>
-		
-		<div class="form">
-			<label for="firstname">Prénom</label>
-			<input type="string" id="firstname" name="firstname" 
-			<?php
-			if($bool){echo"value=$fn";}
-			?>>
-		
-		<div class="form">
-			<label for="age">Age</label>
-			<input type="number" id="age" name="age" 
-			<?php
-			if($bool){echo"value=$a";}
-			?>>
+		<table>
+			<tr>
+				<td><label for="lastname">Nom</label></td>
+				<td><input type="string" id="lastname" name="lastname" 
+				<?php
+				if($bool){echo"value=$ln";}
+				?>></td>
+			</tr>
+			<tr>
+				<td><label for="firstname">Prénom</label></td>
+				<td><input type="string" id="firstname" name="firstname" 
+				<?php
+				if($bool){echo"value=$fn";}
+				?>></td>
+			</tr>
+			<tr>
+				<td><label for="age">Age</label></td>
+				<td><input type="number" id="age" name="age" 
+				<?php
+				if($bool){echo"value=$a";}
+				?>></td>
+			</tr>
+		</table>
 		</div>
 		
 		<br></br>

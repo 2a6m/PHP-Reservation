@@ -32,6 +32,10 @@ class App
 		{
 			include 'ctr_savedb.php';
 		}
+		elseif (isset($_POST['show-res']))
+		{
+			include 'views/show_db.php';
+		}
 		else
 		{
 			$this->home();
