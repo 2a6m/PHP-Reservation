@@ -30,9 +30,10 @@
 	{
 		$insurance = 0;
 	}
+	$nbpas = $res->lenght_passengers();
 	
-	$sql = "INSERT INTO reservation (destination, insurance, price)
-    VALUES ('".$destination."','".$insurance."','".$price."')";
+	$sql = "INSERT INTO reservation (destination, insurance, price, nbpassenger)
+    VALUES ('".$destination."','".$insurance."','".$price."','".$nbpas."')";
 	
 	if ($conn->query($sql) == TRUE)
 	{

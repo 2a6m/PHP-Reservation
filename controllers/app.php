@@ -30,11 +30,19 @@ class App
 		}
 		elseif (isset($_POST['savedb']))
 		{
-			include 'ctr_savedb.php';
+			include 'ctrl_savedb.php';
 		}
 		elseif (isset($_POST['show-res']))
 		{
-			include 'views/show_db.php';
+			include 'views/show_db_res.php';
+		}
+		elseif (isset($_POST['Show_pas']))
+		{
+			include 'views/show_db_pas.php';
+		}
+		elseif (isset($_POST['Load_res']))
+		{
+			include 'ctrl_LoadRes.php';
 		}
 		else
 		{

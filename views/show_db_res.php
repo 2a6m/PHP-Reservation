@@ -18,7 +18,7 @@
 
 //	execute request SQL
 	
-	$sql = "SELECT id, destination, insurance FROM reservation";
+	$sql = "SELECT id, destination, insurance, price, nbpassenger FROM reservation";
 	$result = $conn->query($sql);
 	
 	//end
@@ -36,6 +36,10 @@
 		<th>ID</th>
 		<th>Destination</th>
 		<th>Insurance</th>
+		<th>Number Passengers</th>
+		<th>Price</th>
+		<th></th>
+		<th></th>
 	</tr>
 	<?php
 	
@@ -45,6 +49,9 @@
 			{
 				$id = (string) $row["id"];
 				$dest = (string) $row["destination"];
+				$price = (string) $row["price"];
+				$nbp = (string) $row["nbpassenger"];
+				
 				if ($row["insurance"] == 1)
 				{
 					$ins = "Oui";
@@ -57,6 +64,10 @@
 				      <td>$id</td>
 				      <td>$dest</td>
 				      <td>$ins</td>
+					  <td>$nbp</td>
+					  <td>$price</td>
+					  <td><form method="."post"." action="."index.php"."><button type="."submit"." class="."btn btn-primary"." name="."Show_pas"." value="."$id".">Show Passengers</button></form></td>
+					  <td><form method="."post"." action="."index.php"."><button type="."submit"." class="."btn btn-primary"." name="."Load_res"." value="."$id".">Modify Reservation</button></form></td>
 			          </tr>";
 			}
 		}
@@ -64,3 +75,9 @@
 	?>
 	</table>
 </div class="row">
+
+<div class="form">
+	<form method="post" action="index.php">
+		<button type="submit" class="btn btn-primary" name="">Return</button>
+	</form>
+</div>
