@@ -38,10 +38,10 @@
 <!-- Buttons !-->
 <form method="post" action="index.php">
 	<div>
-		<button type="submit" class="btn btn-primary" name="step_3">Suivant</button>
+		<button type="submit" class="btn btn-primary" name="page" value="ctrl_recap">Suivant</button>
 		<button type="submit" class="btn btn-primary" name="">Annuler</button>
 		<!-- Attention le name n'est pas bon,il faut trouver autres chose !-->
-		<button type="submit" class="btn btn-primary" name="modify_passenger">Modifier</button>
+		<button type="submit" class="btn btn-primary" name="page" value="show_pas">Modifier</button>
 	</div>
 </form>
 

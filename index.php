@@ -1,6 +1,14 @@
+
 <?php
-    session_start();
-    include_once 'controllers/app.php';
-    $app = new App();
-    $app->start();
+	session_start();
+	
+	if(!empty($_POST['page']) && is_file('./controllers/'.$_POST['page'].'.php'))
+	{
+		include './controllers/'.$_POST['page'].'.php';	
+	}
+
+	else
+	{
+		include 'views/home.php';
+	}
 ?>

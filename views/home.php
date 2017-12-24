@@ -10,10 +10,10 @@
             <form method="post" action="index.php" class="container">
 			<table class="table2">
                 <tr>
-					<td><button id="new-reservation" type="submit" class="btn" name="new">Nouvelle réservation</button></td>
+					<td><button id="new-reservation" type="submit" class="btn" name="page" value="show_res">Nouvelle réservation</button></td>
 				</tr>
 				<tr>
-					<td><button id="show-reservation" type="submit" class="btn" name="show-res">Montrer réservations</button></td>
+					<td><button id="show-reservation" type="submit" class="btn" name="page" value="show_db_res">Montrer réservations</button></td>
 				</tr>
 			</table>
             </form>

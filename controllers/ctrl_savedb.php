@@ -1,5 +1,8 @@
 <?php
 
+	include './models/reservation.php';
+	include './models/passenger.php';
+
 // Connection to DB
 	// information to connect to the db
 	$servername = "localhost";

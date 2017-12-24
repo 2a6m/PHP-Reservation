@@ -52,7 +52,7 @@
 		<br></br>
 		
 		<div>
-			<button type="submit" class="btn btn-primary" name="step_2">Suivant</button>
+			<button type="submit" class="btn btn-primary" name="page" value="ctrl_pas">Suivant</button>
 			<button type="submit" class="btn btn-primary" name="">Annuler</button>
 		</div>
 	
