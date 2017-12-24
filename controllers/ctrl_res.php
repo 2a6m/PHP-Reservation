@@ -1,20 +1,20 @@
-<h1>ctrl_res</h1>
-
 <?php
 
-		include './models/reservation.php';
-		include './models/passenger.php';
+		include_once './models/reservation.php';
+		include_once './models/passenger.php';
 
 		// show variable in POST
 		var_dump($_POST);
 		var_dump($_SESSION);
 		
+		
+		// all received values are checked
+		if (isset($_POST['places']) && $_POST['places']>0
+			&& isset($_POST['destination']) && in_array($_POST['destination'],array ('Barcelona', 'New-York', 'Pragues', 'London')))
+		{
 		// init reservation
 		$res = new reservation();
 		
-		// all received values are checked
-		if (isset($_POST['places']) && $_POST['places']>=0)
-		{
 			if ($_POST['places']<=0)
 			{
 				// send error (to implement)

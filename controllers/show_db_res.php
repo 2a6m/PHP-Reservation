@@ -51,12 +51,16 @@
 						<td>$ins</td>
 						<td>$nbp</td>
 						<td>$price</td>
-						<td><form method="."post"." action="."index.php".">
-								<input type="."hidden"." name="."VolID"." value="."$id"."></input>
-								<button type="."submit"." class="."btn btn-primary"." name="."page"." value="."show_db_pas".">Show Passengers</button>
+						<td><form method=post action=index.php>
+								<input type=hidden name=VolID value=$id></input>
+								<button type=submit class=btn btn-primary name=page value=show_db_pas>Show Passengers</button>
 							</form></td>
-						<td><form method="."post"." action="."index.php".">
-								<button type="."submit"." class="."btn btn-primary"." name="."Load_res"." value="."$id".">Modify Reservation</button>
+						<td><form method=post action=index.php>
+								<button type=submit class=btn btn-primary name=Load_res value=$id>Modify Reservation</button>
+							</form></td>
+						<td><form method=post action=index.php>
+								<input type=hidden name=delID value=$id></input>
+								<button type=submit class=btn btn-primary name=page value=del_res>Delete Reservation</button>
 							</form></td>
 						</tr>";
 		}

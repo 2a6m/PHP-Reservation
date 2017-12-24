@@ -8,6 +8,13 @@
 
 <h1 class="row">Réservation</h1>
 
+<?php
+	if (isset($msg))
+	{
+		echo "$msg";
+	}
+?>
+
     <div class="row">
 
         

@@ -8,20 +8,15 @@
 
 <h1 class='row'>Encoder passager</h1>
 
+<?php
+	if (isset($msg))
+	{
+		echo "$msg";
+	}
+?>
+
 	<!-- form to encode data passenger -->
 	<form method="post" action="index.php">
-		
-		<?php
-			$bool = $res->lenght_passengers() == $res->get_number_passenger();
-			if ($bool)
-			{
-				$idx = $res->lenght_passengers_update();
-				$pas = $res->get_passengers()[$idx];
-				$ln = $pas->get_lastname();
-				$fn = $pas->get_firstname();
-				$a = $pas->get_age();
-			}
-		?>
 	
 		<div class="form">
 		<table class="table2">

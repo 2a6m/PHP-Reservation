@@ -6,8 +6,6 @@
 
 <body>
 
-
-
 <!-- Show DB with html -->
 
 <h1 class="row">Liste de Reservation</h1>
@@ -20,6 +18,7 @@
 		<th>Insurance</th>
 		<th>Number Passengers</th>
 		<th>Price</th>
+		<th></th>
 		<th></th>
 		<th></th>
 	</tr>

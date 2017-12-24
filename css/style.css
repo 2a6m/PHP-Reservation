@@ -12,6 +12,20 @@ p {
     font-size: 20px;
 }
 
+p.error {
+	font-family: verdana;
+	font-size: 20px;
+	color: tomato;
+	border-style: solid;
+}
+
+p.valid {
+	font-family: verdana;
+	font-size: 20px;
+	color: mediumseagreen;
+	border-style: solid;
+}
+
 /*table1*/
 
 table.table1 {

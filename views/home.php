@@ -4,6 +4,15 @@
 	<title>Home</title>
 </head>
 
+<h1 class="row">Home</h1>
+
+<?php
+	if (isset($msg))
+	{
+		echo "$msg";
+	}
+?>
+
 <body>
 <div class="row">
         <div class="col-md-6">

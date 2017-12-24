@@ -69,4 +69,7 @@
 	
 	//end
 	$conn->close();
+	
+	$msg = "<p class=valid>Reservation saved</p>";
+	include './views/home.php';
 ?>

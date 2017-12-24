@@ -25,7 +25,7 @@
 
 <div class="form">
 	<form method="post" action="index.php">
-		<button type="submit" class="btn btn-primary" name="show-res">Return</button>
+		<button type="submit" class="btn btn-primary" name="page" value="show_db_res">Return</button>
 	</form>
 </div>
 
