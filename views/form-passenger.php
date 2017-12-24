@@ -1,3 +1,11 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Reservation: step2</title>
+</head>
+
+<body>
+
 <h1 class='row'>Encoder passager</h1>
 
 	<!-- form to encode data passenger -->
@@ -16,7 +24,7 @@
 		?>
 	
 		<div class="form">
-		<table>
+		<table class="table2">
 			<tr>
 				<td><label for="lastname">Nom</label></td>
 				<td><input type="string" id="lastname" name="lastname" 
@@ -49,3 +57,6 @@
 		</div>
 	
 	</form>
+	
+</body>
+</html>

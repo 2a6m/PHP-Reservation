@@ -1,10 +1,18 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Reservation: step1</title>
+</head>
+
+<body>
+
 <h1 class="row">Réservation</h1>
 
     <div class="row">
 
         
             <h3>Prix des places:</h3>
-			<table>
+			<table class="table1">
 				<tr>
 					<th>Age</th>
 					<th>Prix</th>
@@ -28,7 +36,7 @@
 	<form method="post" action="index.php">
 		
 		<div class="form">
-		<table>
+		<table class="table2">
 			<tr>
 				<tr>
 					<td><label for="destination">Destination</label></td>
@@ -58,3 +66,5 @@
 		</div>
 	
 	</form>
+</body>
+</html>

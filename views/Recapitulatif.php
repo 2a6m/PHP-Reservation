@@ -1,9 +1,17 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Recapitulatif</title>
+</head>
+
+<body>
+
 <h1 class="row">Recapitulatif</h1>
 
 <!-- Show all the passengers !-->
 <div class="row">
 	<label>Passengers:</label>
-	<table>
+	<table class="table1">
 	<tr>
 		<th>Lastname</th>
 		<th>Firstname</th>
@@ -36,3 +44,6 @@
 		<button type="submit" class="btn btn-primary" name="modify_passenger">Modifier</button>
 	</div>
 </form>
+
+</body>
+</html>

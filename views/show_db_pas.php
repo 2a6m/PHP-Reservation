@@ -1,3 +1,11 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Reservations Passengers</title>
+</head>
+
+<body>
+
 <?php
 
 // Connection to DB
@@ -25,7 +33,7 @@
 	
 	//end
 	$conn->close();
-
+//
 	?>
 
 <!-- Show DB with html -->
@@ -33,13 +41,12 @@
 <h1 class="row">Liste de Reservation</h1>
 
 <div class="row">
-	<table>
+	<table  class="table1">
 	<tr>
 		<th>ID</th>
 		<th>Firstname</th>
 		<th>Lastname</th>
 		<th>Age</th>
-		<th></th>
 	</tr>
 	<?php
 	
@@ -57,7 +64,6 @@
 				      <td>$first</td>
 				      <td>$last</td>
 					  <td>$age</td>
-					  <td><form method="."post"." action="."index.php"."><button type="."submit"." class="."btn btn-primary"." name="."Load_res".">Modify Reservation</button></form></td>
 			          </tr>";
 			}
 		}
@@ -72,3 +78,6 @@
 		<button type="submit" class="btn btn-primary" name="show-res">Return</button>
 	</form>
 </div>
+
+</body>
+</html>

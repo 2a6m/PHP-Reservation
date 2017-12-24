@@ -1,7 +1,14 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Home</title>
+</head>
+
+<body>
 <div class="row">
         <div class="col-md-6">
             <form method="post" action="index.php" class="container">
-			<table>
+			<table class="table2">
                 <tr>
 					<td><button id="new-reservation" type="submit" class="btn" name="new">Nouvelle réservation</button></td>
 				</tr>
@@ -12,3 +19,5 @@
             </form>
         </div>
 </div>
+</body>
+</html>

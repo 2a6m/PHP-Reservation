@@ -1,9 +1,17 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Confirmation</title>
+</head>
+
+<body>
+
 <h1 class="row">Confirmation</h1>
 
 <!-- Show the flight and the passengers + the price !-->
 <div class="row">
 	<label>Flight:</label>
-	<table>
+	<table class="table2">
 		<tr>
 			<th>Destination</th>
 			<th>Number of passengers</th>
@@ -30,7 +38,7 @@
 	<br></br>
 	
 	<label>Passengers:</label>
-	<table>
+	<table class="table1">
 	<tr>
 		<th>Lastname</th>
 		<th>Firstname</th>
@@ -68,3 +76,6 @@
 		<button type="submit" class="btn btn-primary" name="savedb">Confirmer</button>
 	</form>
 </div>
+
+</body>
+</html>
