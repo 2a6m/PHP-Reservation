@@ -24,21 +24,21 @@
 				<td><label for="lastname">Nom</label></td>
 				<td><input type="string" id="lastname" name="lastname" 
 				<?php
-				if($bool){echo"value=$ln";}
+				if(isset($ln)){echo"value=$ln";}
 				?>></td>
 			</tr>
 			<tr>
 				<td><label for="firstname">Prénom</label></td>
 				<td><input type="string" id="firstname" name="firstname" 
 				<?php
-				if($bool){echo"value=$fn";}
+				if(isset($fn)){echo"value=$fn";}
 				?>></td>
 			</tr>
 			<tr>
 				<td><label for="age">Age</label></td>
 				<td><input type="number" id="age" name="age" 
 				<?php
-				if($bool){echo"value=$a";}
+				if(isset($a)){echo"value=$a";}
 				?>></td>
 			</tr>
 		</table>
