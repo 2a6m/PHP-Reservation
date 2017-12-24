@@ -8,17 +8,23 @@
 		var_dump($_SESSION);
 		
 		
+		if (isset($_SESSION['res']))
+		{
+			$res = unserialize($_SESSION['res']);
+		}
+		else
+		{
+				// init reservation
+				$res = new reservation();
+		}
 		// all received values are checked
 		if (isset($_POST['places']) && $_POST['places']>0
 			&& isset($_POST['destination']) && in_array($_POST['destination'],array ('Barcelona', 'New-York', 'Pragues', 'London')))
 		{
-		// init reservation
-		$res = new reservation();
-		
 			if ($_POST['places']<=0)
-			{
-				// send error (to implement)
-			}
+				{
+					// send error (to implement)
+				}
 			else
 			{
 				if (is_numeric($_POST['places']))
@@ -46,15 +52,14 @@
 		
 			// save reservation in session_cache_expire
 			$_SESSION['res'] = serialize($res);
-		
+			
 			// pass at the next step
-			include './controllers/show_pas.php';
+				include './controllers/show_pas.php';
 		}
 		else
 		{
 			include './controllers/show_res.php';
 		}
-		
-		return;
+	return;
 		
 ?>

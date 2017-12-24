@@ -8,6 +8,7 @@ Class Reservation
 	private $passengers = array();
 	private $passengers_update = array();
 	private $price;
+	private $id = null;
 	
 	public function __construct($insurance = null)
 	{
@@ -99,6 +100,16 @@ Class Reservation
 	{
 		$this->price = $this->calculate_price();
 		return $this->price;
+	}
+	
+	public function set_id($val)
+	{
+		$this->id = $val;
+	}
+	
+	public function get_id()
+	{
+		return $this->id;
 	}
 }
 ?>

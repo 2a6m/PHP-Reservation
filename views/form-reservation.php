@@ -48,19 +48,25 @@
 				<tr>
 					<td><label for="destination">Destination</label></td>
 					<td><select name="destination">
-						<option value="Barcelona">Barcelona</option>
-						<option value="New-York">New-York</option>
-						<option value="Pragues">Pragues</option>
-						<option value="London">London</option>
+						<option value="Barcelona" <?php if ($dest == 'Barcelona') echo 'selected="selected"';?>>Barcelona</option>
+						<option value="New-York" <?php if ($dest == 'New-York') echo 'selected="selected"';?>>New-York</option>
+						<option value="Pragues" <?php if ($dest == 'Pragues') echo 'selected="selected"';?>>Pragues</option>
+						<option value="London" <?php if ($dest == 'London') echo 'selected="selected"';?>>London</option>
 					</select></td>
 				</tr>
 				<tr>
 					<td><label for="places">Nombre de places</label></td>
-					<td><input type="number" id="places" name="places"></td>
+					<td><input type="number" id="places" name="places"
+					<?php
+						if(isset($nbp)){echo"value=$nbp";}
+					?>></td>
 				</tr>
 				<tr>
 					<td><label>Assurance annulation</label></td>
-					<td><input type="checkbox" id="insurancce" name="insurance"></td>
+					<td><input type="checkbox" id="insurancce" name="insurance"
+					<?php
+						if(isset($ins) && $ins){echo"checked=checked";}
+					?>></td>
 				</tr>
 		</table>
 		</div>

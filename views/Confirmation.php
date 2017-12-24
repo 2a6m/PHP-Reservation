@@ -11,7 +11,7 @@
 <!-- Show the flight and the passengers + the price !-->
 <div class="row">
 	<label>Flight:</label>
-	<table class="table2">
+	<table class="table1">
 		<tr>
 			<th>Destination</th>
 			<th>Number of passengers</th>

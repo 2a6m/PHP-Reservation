@@ -1,5 +1,5 @@
 <?php
-
+	
 // Connection to DB
 	// information to connect to the db
 	$servername = "localhost";
@@ -56,7 +56,8 @@
 								<button type=submit class=btn btn-primary name=page value=show_db_pas>Show Passengers</button>
 							</form></td>
 						<td><form method=post action=index.php>
-								<button type=submit class=btn btn-primary name=Load_res value=$id>Modify Reservation</button>
+								<input type=hidden name=loadID value=$id></input>
+								<button type=submit class=btn btn-primary name=page value=ctrl_load>Modify Reservation</button>
 							</form></td>
 						<td><form method=post action=index.php>
 								<input type=hidden name=delID value=$id></input>

@@ -11,6 +11,10 @@
 	
 	// to modify passenger
 	
+	echo $res->lenght_passengers();
+	echo '<br></br>';
+	echo $res->get_number_passenger();
+	
 	$bool = $res->lenght_passengers() == $res->get_number_passenger();
 	if ($bool)
 	{

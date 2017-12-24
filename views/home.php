@@ -12,6 +12,11 @@
 		echo "$msg";
 	}
 ?>
+<?php
+	include_once './models/reservation.php';
+	$res = new reservation();
+	$_SESSION['res'] = serialize($res);
+?>
 
 <body>
 <div class="row">
