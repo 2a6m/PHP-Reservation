@@ -10,23 +10,23 @@
 
 <!-- Show the flight and the passengers + the price !-->
 <div class="row">
-	<label>Flight:</label>
+	<label>Vol:</label>
 	<table class="table1">
 		<tr>
 			<th>Destination</th>
-			<th>Number of passengers</th>
-			<th>Insurance</th>
+			<th>Nombre de passagers</th>
+			<th>Assurance</th>
 		</tr>
 		<tr><?php echo $flight;?></tr>
 	</table>
 	
 	<br></br>
 	
-	<label>Passengers:</label>
+	<label>Passagers:</label>
 	<table class="table1">
 	<tr>
-		<th>Lastname</th>
-		<th>Firstname</th>
+		<th>Nom</th>
+		<th>Prenom</th>
 		<th>Age</th>
 	</tr>
 	<?php echo $pas;?>
@@ -34,12 +34,13 @@
 	
 	<br></br>
 	
-	<label>Price:</label>
+	<label>Prix:</label>
 	<?php echo $price;?>
 </div>
 
 <br></br>
 
+<!-- Form !-->
 <div>
 	<form method="post" action="index.php">
 		<button type="submit" class="btn btn-primary" name="">Annuler</button>

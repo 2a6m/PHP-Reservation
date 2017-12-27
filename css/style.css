@@ -12,6 +12,9 @@ p {
     font-size: 20px;
 }
 
+/* 	error and valid message
+	green or red
+*/
 p.error {
 	font-family: verdana;
 	font-size: 20px;
@@ -26,7 +29,9 @@ p.valid {
 	border-style: solid;
 }
 
-/*table1*/
+/*	table1
+	to display data with header
+*/
 
 table.table1 {
     border-collapse: collapse;
@@ -51,7 +56,9 @@ table.table1 th {
     color: hsl(0, 100%, 25%);
 }
 
-/*table 2*/
+/*	table 2
+	to display form
+*/
 
 table.table2 , table.table2 td, table.table2 th {    
     border: 1px solid #ddd;

@@ -3,20 +3,14 @@
 		include './models/reservation.php';
 		include './models/passenger.php';
 		
-	// show variable in POST
-		var_dump($_POST);
-		var_dump($_SESSION);
-		
-		// check if no error
-		//if($_POST['age']<=0 )
+		// check if no error in value return
 		if(strlen($_POST['firstname'])>0 && strlen($_POST['lastname'])>0 && $_POST['age']>0)
 		{
-			// extract information
+			// extract information of the reservation
 			$res = unserialize($_SESSION['res']);
 		
-			// create passenger
+			// create passenger and add it to the reservation
 			$passenger = new passenger($_POST['firstname'],$_POST['lastname'], $_POST['age']);
-		
 			$res->add_passenger($passenger);
 		
 			// save	
@@ -33,6 +27,7 @@
 				include './controllers/show_recap.php';
 			}
 		}
+		// return to the controller to show the page again
 		else
 		{		
 			$_POST['error'] = True;

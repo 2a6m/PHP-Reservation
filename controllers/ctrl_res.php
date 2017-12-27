@@ -2,12 +2,8 @@
 
 		include_once './models/reservation.php';
 		include_once './models/passenger.php';
-
-		// show variable in POST
-		var_dump($_POST);
-		var_dump($_SESSION);
 		
-		
+		// create or load a reservation 
 		if (isset($_SESSION['res']))
 		{
 			$res = unserialize($_SESSION['res']);
@@ -17,13 +13,14 @@
 				// init reservation
 				$res = new reservation();
 		}
-		// all received values are checked
+		
+		// check if no error in the value return
 		if (isset($_POST['places']) && $_POST['places']>0
 			&& isset($_POST['destination']) && in_array($_POST['destination'],array ('Barcelona', 'New-York', 'Pragues', 'London')))
 		{
 			if ($_POST['places']<=0)
 				{
-					// send error (to implement)
+					// error is treated on the upper if
 				}
 			else
 			{
@@ -46,14 +43,10 @@
 			}
 		
 		
-			// give the informations to the reservation
+			// save
 			$res->set_number_passenger($nb_pass);
-		
-		
-			// save reservation in session_cache_expire
 			$_SESSION['res'] = serialize($res);
 			
-			// pass at the next step
 				include './controllers/show_pas.php';
 		}
 		else

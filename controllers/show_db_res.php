@@ -14,7 +14,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-//
 
 //	execute request SQL
 	
@@ -23,7 +22,6 @@
 	
 	//end
 	$conn->close();
-//
 
 // display
 	

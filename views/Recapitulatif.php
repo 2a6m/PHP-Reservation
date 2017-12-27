@@ -10,11 +10,11 @@
 
 <!-- Show all the passengers !-->
 <div class="row">
-	<label>Passengers:</label>
+	<label>Passagers:</label>
 	<table class="table1">
 	<tr>
-		<th>Lastname</th>
-		<th>Firstname</th>
+		<th>Nom</th>
+		<th>Prenom</th>
 		<th>Age</th>
 	</tr>
 	<?php
@@ -40,7 +40,6 @@
 	<div>
 		<button type="submit" class="btn btn-primary" name="page" value="ctrl_recap">Suivant</button>
 		<button type="submit" class="btn btn-primary" name="">Annuler</button>
-		<!-- Attention le name n'est pas bon,il faut trouver autres chose !-->
 		<button type="submit" class="btn btn-primary" name="page" value="show_pas">Modifier</button>
 	</div>
 </form>

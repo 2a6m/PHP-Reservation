@@ -2,10 +2,6 @@
 
 	include './models/reservation.php';
 	include './models/passenger.php';
-
-	// show variable in POST
-	var_dump($_POST);
-	var_dump($_SESSION);
 		
 	// extract information
 	$res = unserialize($_SESSION['res']);

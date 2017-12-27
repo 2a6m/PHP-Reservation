@@ -28,7 +28,7 @@
 				?>></td>
 			</tr>
 			<tr>
-				<td><label for="firstname">Prénom</label></td>
+				<td><label for="firstname">Prenom</label></td>
 				<td><input type="string" id="firstname" name="firstname" 
 				<?php
 				if(isset($fn)){echo"value=$fn";}
@@ -45,6 +45,8 @@
 		</div>
 		
 		<br></br>
+		
+		<!-- navigate !-->
 		
 		<div>
 			<button type="submit" class="btn btn-primary" name="page" value="ctrl_pas">Suivant</button>

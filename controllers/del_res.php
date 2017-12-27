@@ -14,7 +14,6 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-//
 
 //	execute request SQL
 
@@ -30,10 +29,9 @@
 	
 	//end
 	$conn->close();
-//
 
-$msg = "<p class=valid>Reservation $id well deleted</p>";
+	$msg = "<p class=valid>Reservation $id well deleted</p>";
 
-include './views/home.php';
+	include './views/home.php';
 
 ?>

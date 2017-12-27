@@ -17,7 +17,8 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-//	
+
+	// controle the data
 	$res = unserialize($_SESSION['res']);
 	$destination = $res->get_destination();
 	$price = intval($res->get_price());
@@ -29,13 +30,14 @@
 	{
 		$insurance = 0;
 	}
-	$nbpas = intval($res->lenght_passengers());
-	$id = intval($res->get_id());
 	
 	// update or create a new data
-	if ($res->get_id() != null)
+	$res_db = unserialize($_SESSION['res_db']);
+	$nbpas = intval($res->lenght_passengers());
+	$id = intval($res_db->get_id());
+	if ($res_db->get_id() != null)
 	{
-		$sql = "UPDATE reservation SET destination='$destination', insurance='$insurance', price='$price' WHERE id=$id";
+		$sql = "UPDATE reservation SET destination='$destination', insurance='$insurance', nbpassenger='$nbpas', price='$price' WHERE id=$id";
 		
 		if ($conn->query($sql) === TRUE) {
 			echo "Record updated successfully";
@@ -107,7 +109,6 @@
 				echo "Error: ".$sql."<br>".$conn->error;
 			}
 		}
-	//		
 	}
 	
 

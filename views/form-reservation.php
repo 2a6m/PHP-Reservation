@@ -6,7 +6,7 @@
 
 <body>
 
-<h1 class="row">Réservation</h1>
+<h1 class="row">Reservation</h1>
 
 <?php
 	if (isset($msg))
@@ -73,6 +73,7 @@
 	
 		<br></br>
 		
+	<!-- navigate !-->	
 		<div>
 			<button type="submit" class="btn btn-primary" name="page" value="ctrl_res">Suivant</button>
 			<button type="submit" class="btn btn-primary" name="">Annuler</button>

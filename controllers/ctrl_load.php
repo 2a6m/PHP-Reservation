@@ -17,18 +17,15 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
-//
 
 	$id = $_POST['loadID'];
 	
-//	execute request SQL
+//	execute request SQL for the reservation
 	
 	$sql = "SELECT id, destination, insurance, price, nbpassenger FROM reservation WHERE id = $id";
 	$result = $conn->query($sql);
-	
-//
 
-// take information
+// take information via the id
 	if($result->num_rows > 0)
 	{
 		while($row = $result->fetch_assoc())
@@ -53,17 +50,15 @@
 			$res->set_id($idres);
 		}
 	}
-//
 
-//	execute request SQL
+//	execute request SQL for the passengers
 
 	
 	$sql = "SELECT id, firstname, lastname, age FROM passenger WHERE idres = $id";
 	$result = $conn->query($sql);
 	
-	//end
+//end
 	$conn->close();
-//
 
 // take information		
 	if($result->num_rows > 0)
@@ -82,9 +77,8 @@
 	
 	$res->save_passengers();
 	
-	// save reservation in session_cache_expire
-	$_SESSION['res'] = serialize($res);
+	// save reservation on reservation database
+	$_SESSION['res_db'] = serialize($res);
 	
 	include './controllers/show_res.php';
-//;
 ?>
