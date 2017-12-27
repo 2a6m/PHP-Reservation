@@ -48,10 +48,10 @@
 				<tr>
 					<td><label for="destination">Destination</label></td>
 					<td><select name="destination">
-						<option value="Barcelona" <?php if ($dest == 'Barcelona') echo 'selected="selected"';?>>Barcelona</option>
-						<option value="New-York" <?php if ($dest == 'New-York') echo 'selected="selected"';?>>New-York</option>
-						<option value="Pragues" <?php if ($dest == 'Pragues') echo 'selected="selected"';?>>Pragues</option>
-						<option value="London" <?php if ($dest == 'London') echo 'selected="selected"';?>>London</option>
+						<option value="Barcelona" <?php if (isset($dest) && $dest == 'Barcelona') echo 'selected="selected"';?>>Barcelona</option>
+						<option value="New-York" <?php if (isset($dest) && $dest == 'New-York') echo 'selected="selected"';?>>New-York</option>
+						<option value="Pragues" <?php if (isset($dest) && $dest == 'Pragues') echo 'selected="selected"';?>>Pragues</option>
+						<option value="London" <?php if (isset($dest) && $dest == 'London') echo 'selected="selected"';?>>London</option>
 					</select></td>
 				</tr>
 				<tr>

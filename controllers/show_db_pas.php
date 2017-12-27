@@ -9,6 +9,8 @@
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
+	
+	$display = "";
     
     // Check connection
     if ($conn->connect_error) {
@@ -30,7 +32,6 @@
 // display
 	if($result->num_rows > 0)
 	{
-		$display = "";
 		while($row = $result->fetch_assoc())
 		{
 			$id = (string) $row["id"];

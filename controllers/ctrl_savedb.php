@@ -22,6 +22,7 @@
 	$res = unserialize($_SESSION['res']);
 	$destination = $res->get_destination();
 	$price = intval($res->get_price());
+	$nbpas = intval($res->lenght_passengers());
 	if ($res->get_insurance())
 	{
 		$insurance = 1;
@@ -31,46 +32,49 @@
 		$insurance = 0;
 	}
 	
+	
 	// update or create a new data
-	$res_db = unserialize($_SESSION['res_db']);
-	$nbpas = intval($res->lenght_passengers());
-	$id = intval($res_db->get_id());
-	if ($res_db->get_id() != null)
+	if(isset($_SESSION['res_db']))
 	{
-		$sql = "UPDATE reservation SET destination='$destination', insurance='$insurance', nbpassenger='$nbpas', price='$price' WHERE id=$id";
-		
-		if ($conn->query($sql) === TRUE) {
-			echo "Record updated successfully";
-		} 
-		else {
-			echo "Error updating record: " . $conn->error;
-		}
-		
-		// sql to delete a record
-		$sql = "DELETE FROM passenger WHERE idres=$id";
-
-		if ($conn->query($sql) === TRUE) {
-			echo "Record deleted successfully";
-		} else {
-			echo "Error deleting record: " . $conn->error;
-		}
-		
-		// add data to db passenger
-		foreach($res->get_passengers() as $pas)
+		$res_db = unserialize($_SESSION['res_db']);
+		$id = intval($res_db->get_id());
+		if ($res_db->get_id() != null)
 		{
-			$firstname = $pas->get_firstname();
-			$lastname = $pas->get_lastname();
-			$age = $pas->get_age();
+			$sql = "UPDATE reservation SET destination='$destination', insurance='$insurance', nbpassenger='$nbpas', price='$price' WHERE id=$id";
 			
-			$sql = "INSERT INTO passenger (firstname, lastname, age, idres)
-			VALUES ('".$firstname."','".$lastname."','".$age."','".$id."')";
-			
-			if ($conn->query($sql) == TRUE)
-			{
+			if ($conn->query($sql) === TRUE) {
+				echo "Record updated successfully";
+			} 
+			else {
+				echo "Error updating record: " . $conn->error;
 			}
-			else
+			
+			// sql to delete a record
+			$sql = "DELETE FROM passenger WHERE idres=$id";
+
+			if ($conn->query($sql) === TRUE) {
+				echo "Record deleted successfully";
+			} else {
+				echo "Error deleting record: " . $conn->error;
+			}
+			
+			// add data to db passenger
+			foreach($res->get_passengers() as $pas)
 			{
-				echo "Error: ".$sql."<br>".$conn->error;
+				$firstname = $pas->get_firstname();
+				$lastname = $pas->get_lastname();
+				$age = $pas->get_age();
+				
+				$sql = "INSERT INTO passenger (firstname, lastname, age, idres)
+				VALUES ('".$firstname."','".$lastname."','".$age."','".$id."')";
+				
+				if ($conn->query($sql) == TRUE)
+				{
+				}
+				else
+				{
+					echo "Error: ".$sql."<br>".$conn->error;
+				}
 			}
 		}
 	}
@@ -111,7 +115,8 @@
 		}
 	}
 	
-
+	// clear data of session
+	$_SESSION = array();
 	
 	//end
 	$conn->close();

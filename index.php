@@ -9,6 +9,7 @@
 
 	else
 	{
+	
 		include 'views/home.php';
 	}
 ?>

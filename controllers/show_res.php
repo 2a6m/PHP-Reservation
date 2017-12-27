@@ -18,6 +18,7 @@
 		$nbp = $res_db->get_number_passenger();
 	}
 	
+	
 	include './views/form-reservation.php';
 	
 ?>
